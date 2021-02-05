@@ -41,4 +41,17 @@ nav {
   text-decoration: none;
 }
 
+@media screen and (max-width: 768px){
+.nav-links{
+  position: fixed;
+  background-color: rgb(196, 226, 255);
+  color: rgb(17, 17, 77);
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+
+}
+  }
+}
+
 /* Next Section */
