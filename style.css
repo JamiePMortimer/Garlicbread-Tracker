@@ -2,56 +2,60 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Navigation Bar Section */
+body {
+  background-color: rgba(221, 221, 221, 0.7);
+}
+
+/* Outer Frame Section */
+
+.outer-frame {
+  position: absolute;
+  display: flex;
+  width: 95%;
+  height: 80%;
+  background-color: white;
+  left: 2.5%;
+  top: 10%;
+  border-radius: 15px;
+}
+
+.left-nav {
+  width: 20%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+.centre-main {
+  width: 60%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: transparent;
+  border-radius: 15px;
+}
+
+/* Left Section */
 
 .logo {
+  border: 1px solid black;
+  background-color: transparent;
+  padding: 1rem;
+  padding-bottom: 3rem;
   display: flex;
-  margin-left: 2%;
-  font-size: 20px;
-  width: 50%;
-  align-items: center;
-  color: rgb(17, 17, 77);
-}
-.logo img{
-  margin-right: 5%;
+  font-weight: 800;
 }
 
-nav {
-  display: flex;
-  height: 10vh;
-  background-color: rgb(196, 226, 255);
-  border-bottom: silver 1px solid;
-  font-family: sans-serif;
+.logo h1 {
+  font-size: 1rem;
+  background-color: transparent;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  width: 50%;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
-  margin-left: auto;
+.logo img {
+  margin: 1rem;
+  width: 50px;
+  background-color: transparent;
 }
-
-.nav-links li a {
-  color: rgb(17, 17, 77);
-  text-decoration: none;
-}
-
-@media screen and (max-width: 768px){
-.nav-links{
-  position: fixed;
-  background-color: rgb(196, 226, 255);
-  color: rgb(17, 17, 77);
-  height: 100vh;
-  width: 100%;
-  flex-direction: column;
-
-}
-  }
-}
-
-/* Next Section */
