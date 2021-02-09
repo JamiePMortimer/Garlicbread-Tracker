@@ -6,6 +6,13 @@ menuSelect.forEach((e) => {
   e.addEventListener('click', () => {
     e.removeAttribute('inactive');
     e.classList.add('active');
+    mainSection.forEach((evnt) => {
+      if (evnt.classList[1] === e.classList[1]) {
+        evnt.classList.remove('hide');
+      } else {
+        evnt.classList.add('hide');
+      }
+    });
     menuSelect.forEach((ev) => {
       if (ev === e) {
         return;
@@ -15,11 +22,4 @@ menuSelect.forEach((e) => {
       }
     });
   });
-  // mainSection.forEach((evnt) => {
-  //   if (evnt.classList[1] === e.classList[1]) {
-  //     evnt.removeAttribute('hide')
-  //   } else {
-  //     evnt.classList.add('hide');
-  //   }
-  // });
 });
