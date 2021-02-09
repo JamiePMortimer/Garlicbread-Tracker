@@ -98,11 +98,24 @@ body {
   color: rgb(95, 95, 95);
 }
 
-.main-users{
+.main-section{
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  background-color: green;
+}
+
+.main-snacks{
+  background-color: hotpink;
+}
+
+.main-add{
+  background-color: maroon;
+}
+
+.main-settings{
+  background-color: midnightblue;
 }
 
 .add-user{
@@ -110,6 +123,8 @@ body {
   background-color: rgb(221, 221, 221);
   width: 100%;
   height: 300px;
+  margin-bottom: 10px;
+  
 }
 .user-list{
   display: flex;
@@ -133,4 +148,8 @@ body {
 
 .user1 h2{
   color: black;
+}
+
+.hide{
+  display: none;
 }
