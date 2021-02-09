@@ -103,22 +103,10 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background-color: green;
 }
 
-.main-snacks{
-  background-color: hotpink;
-}
 
-.main-add{
-  background-color: maroon;
-}
-
-.main-settings{
-  background-color: midnightblue;
-}
-
-.add-user{
+.add-item{
   border-radius: 15px;
   background-color: rgb(221, 221, 221);
   width: 100%;
@@ -126,13 +114,13 @@ body {
   margin-bottom: 10px;
   
 }
-.user-list{
+.item-list{
   display: flex;
   flex-wrap: wrap;
   overflow-x: scroll;
 }
 
-.user1{
+.item, .snack1{
   display: flex;
   width: 100%;
   height: 203px;
@@ -141,12 +129,12 @@ body {
   margin: 5px
 }
 
-.user1 img, .user1 h2{
+.item img, .item h2{
   padding: 1rem;
   border-radius: 25px;
 }
 
-.user1 h2{
+.item h2{
   color: black;
 }
 
