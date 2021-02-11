@@ -1,3 +1,5 @@
+// import Users from 'users.js'
+
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
 const mainSection = mainSelect.querySelectorAll('.main-section');
