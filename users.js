@@ -24,9 +24,13 @@ class UserList {
       userEl.innerHTML = `
       <div class="item">
         <img src="${user.image}" width="150px" alt="${user.name}">
-
+        <h1> Name: ${user.name}  </h1>
       </div>
-      `
+      `;
+      userList.append(userEl);
     }
+    renderHook.append(userList);
   }
 }
+const userList = new UserList();
+userList.render();
