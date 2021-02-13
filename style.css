@@ -87,8 +87,7 @@ body {
 
 .centre-main {
   width: 60%;
-  height: 100%;
-  /* background-color: skyblue ; */
+  /* height: 100%; */
 }
 
 .section-title{
@@ -122,21 +121,21 @@ body {
   height: 300px;
 }
 
-.item, .snack1{
+.item{
   display: flex;
   width: 100%;
   height: 203px;
   border: 1px solid silver;
   border-radius: 15px;
-  /* margin: 5px */
 }
 
-.item img, .item h2{
+.item img{
   padding: 1rem;
   border-radius: 25px;
 }
 
 .item h2{
+  padding-top: 1rem;
   color: black;
 }
 

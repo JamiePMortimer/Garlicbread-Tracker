@@ -15,7 +15,7 @@ class UserList {
   constructor(){};
 
   render(){
-    const renderHook = document.getElementById('test');
+    const renderHook = document.getElementById('Users');
     const userList = document.createElement('ul');
     userList.className = 'user-list';
     for (const user of this.users) {
@@ -24,7 +24,10 @@ class UserList {
       userEl.innerHTML = `
       <div class="item">
         <img src="${user.image}" width="150px" alt="${user.name}">
-        <h1> Name: ${user.name}  </h1>
+        <div>
+        <h2> Name: ${user.name}</h2>
+        <h2> Age: ${user.age}</h2>
+        <div>
       </div>
       `;
       userList.append(userEl);
