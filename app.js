@@ -1,4 +1,4 @@
-// import Users from 'users.js'
+import {User, UserList} from './users.js'
 
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
