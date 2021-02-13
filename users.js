@@ -15,8 +15,7 @@ export class UserList {
   constructor(){};
 
   render(type){
-    this.type = type
-    console.log(`${type}`)
+    this.type = type;
     const renderHook = document.getElementById(`${type}`);
     const userList = document.createElement('ul');
     userList.className = 'user-list';

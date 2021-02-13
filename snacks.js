@@ -6,6 +6,5 @@ class SnackList extends UserList {
     new Item('Hugo', 8, '/images/Hugo.JPG'),
     new Item('Nate', 10, '/images/Nate.JPG'),
   ];
-
   constructor();
 }
