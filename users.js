@@ -1,4 +1,4 @@
-export class User {
+export class Item {
   constructor(title, age, image) {
     this.title = title;
     this.age = age;
@@ -8,14 +8,16 @@ export class User {
 
 export class UserList {
   users = [
-    new User('Kyle', 15, '/images/Kyle.JPG'),
-    new User('Hugo', 8, '/images/Hugo.JPG'),
-    new User('Nate', 10, '/images/Nate.JPG'),
+    new Item('Kyle', 15, '/images/Kyle.JPG'),
+    new Item('Hugo', 8, '/images/Hugo.JPG'),
+    new Item('Nate', 10, '/images/Nate.JPG'),
   ];
   constructor(){};
 
-  render(){
-    const renderHook = document.getElementById('users');
+  render(type){
+    this.type = type
+    console.log(`${type}`)
+    const renderHook = document.getElementById(`${type}`);
     const userList = document.createElement('ul');
     userList.className = 'user-list';
     for (const user of this.users) {
@@ -35,5 +37,3 @@ export class UserList {
     renderHook.append(userList);
   }
 }
-const userList = new UserList();
-userList.render();

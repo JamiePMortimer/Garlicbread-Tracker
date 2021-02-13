@@ -1,4 +1,4 @@
-import {User, UserList} from './users.js'
+import {UserList} from './users.js'
 
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
@@ -25,3 +25,6 @@ menuSelect.forEach((e) => {
     });
   });
 });
+
+const userList = new UserList();
+userList.render('users');
