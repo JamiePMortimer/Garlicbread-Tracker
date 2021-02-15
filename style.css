@@ -118,7 +118,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   overflow-x: scroll;
-  height: 300px;
+  height: 100%;
 }
 
 .item{

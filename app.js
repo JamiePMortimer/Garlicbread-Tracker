@@ -1,4 +1,5 @@
 import {UserList} from './users.js'
+import {SnackList} from './snacks.js'
 
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
@@ -28,3 +29,5 @@ menuSelect.forEach((e) => {
 
 const userList = new UserList();
 userList.render('users');
+const snackList = new SnackList();
+snackList.render('snacks')
