@@ -4,6 +4,11 @@ import {SnackList} from './snacks.js'
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
 const mainSection = mainSelect.querySelectorAll('.main-section');
+const userBtn = document.querySelector('.main-section.users');
+
+userBtn.addEventListener('click', () =>{
+  console.log('It Works');
+})
 
 menuSelect.forEach((e) => {
   e.addEventListener('click', () => {
@@ -32,6 +37,7 @@ userList.render('users');
 const snackList = new SnackList();
 snackList.render('snacks');
 
-function store () {
-document.cookie = 'Note=Boop'
-}
+// function store () {
+// document.cookie = 'Note=Boop'
+// }
+

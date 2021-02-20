@@ -98,14 +98,20 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: brown;
+  border: silver 1px solid;
+  background-color: rgba(74, 194, 241, 0.2);
+  color: blue;
   right: 5%;
   top: 5%;
-  color: aliceblue;
 }
 
 .add-new:hover{
-  
+  color: rgba(74, 194, 241, 1);
+  background-color: blue;
+}
+
+.add-new:active{
+  transform: translateY(1px);
 }
 
 .section-title{
