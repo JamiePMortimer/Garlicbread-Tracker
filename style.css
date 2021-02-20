@@ -9,6 +9,31 @@ body {
   background-color: rgba(221, 221, 221, 0.7);
 }
 
+/* Modal */
+
+.add-modal{
+  position: fixed;
+  left: 30vw;
+  top: 30vh;
+  width: 40vw;
+  height: 40vh;
+  background: white;
+  border-radius: 2vw;
+  z-index: 2;
+}
+
+
+
+.backdrop{
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
 /* Outer Frame Section */
 
 .outer-frame {

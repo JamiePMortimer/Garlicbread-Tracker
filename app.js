@@ -8,7 +8,11 @@ const userBtn = document.querySelector('.main-section.users').querySelector('.ad
 const snackBtn = document.querySelector('.main-section.snacks').querySelector('.add-new');
 
 userBtn.addEventListener('click', () =>{
-  console.log('It Works');
+  console.log('User');
+})
+
+snackBtn.addEventListener('click', () =>{
+  console.log('Snacks');
 })
 
 menuSelect.forEach((e) => {
