@@ -17,8 +17,8 @@ menuSelect.forEach((e) => {
       }
     });
     menuSelect.forEach((ev) => {
-      if (ev === e) {
-        return;
+      if (ev.classList[1] === e.classList[1]) {
+        ev.classList.remove('inactive');
       } else {
         ev.classList.add('inactive');
         ev.classList.remove('active');
@@ -30,4 +30,8 @@ menuSelect.forEach((e) => {
 const userList = new UserList();
 userList.render('users');
 const snackList = new SnackList();
-snackList.render('snacks')
+snackList.render('snacks');
+
+function store () {
+document.cookie = 'Note=Boop'
+}
