@@ -4,7 +4,8 @@ import {SnackList} from './snacks.js'
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
 const mainSection = mainSelect.querySelectorAll('.main-section');
-const userBtn = document.querySelector('.main-section.users');
+const userBtn = document.querySelector('.main-section.users').querySelector('.add-new');
+const snackBtn = document.querySelector('.main-section.snacks').querySelector('.add-new');
 
 userBtn.addEventListener('click', () =>{
   console.log('It Works');
