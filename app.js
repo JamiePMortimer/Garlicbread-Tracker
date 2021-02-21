@@ -7,21 +7,30 @@ const mainSection = mainSelect.querySelectorAll('.main-section');
 const userBtn = document.querySelector('.main-section.users').querySelector('.add-new');
 const snackBtn = document.querySelector('.main-section.snacks').querySelector('.add-new');
 const modalBox = document.querySelector('.add-modal');
+const modalInputBox = document.querySelector('.modal-input');
+const modalInputLabel = modalInputBox.querySelectorAll('label');
+const modalInputText = modalInputBox.querySelectorAll('input');
 const backdrop = document.querySelector('.backdrop');
 
+
+console.log(modalInputText)
 userBtn.addEventListener('click', modalSelect)
 snackBtn.addEventListener('click', modalSelect)
 
 function modalSelect (type) {
+  console.log(type.path[2].classList[1])
   if(type.path[2].classList[1] === 'users'){
-    // console.log('This is Users')
+    modalInputLabel[0].textContent = 'Name';
+    modalInputLabel[1].textContent = 'Age';
     modalDisplay()
   } else if (type.path[2].classList[1] === 'snacks'){
-    console.log('This is Snacks')
+    modalInputLabel[0].textContent = 'Snack';
+    modalInputLabel[1].textContent = 'Details';
+    modalDisplay()
   } else {return}
 }
 
-function modalDisplay (type) {
+function modalDisplay () {
 modalBox.classList.remove('hide');
 backdrop.classList.remove('hide');
 }
@@ -29,7 +38,9 @@ backdrop.classList.remove('hide');
 backdrop.addEventListener('click', () =>{
   backdrop.classList.add('hide');
   modalBox.classList.add('hide');
-  
+  modalInputText.forEach( (e) => {
+    e.value = ""
+  })
 
 })
 
