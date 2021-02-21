@@ -21,6 +21,7 @@ body {
   /* height: 40vh; */
   background: white;
   border-radius: 2vw;
+  border: 1px solid rgb(109, 109, 109);
   z-index: 2;
 }
 
@@ -60,6 +61,7 @@ body {
   border-radius: 50%;
   background: black;
   color: white;
+  cursor: pointer;
 }
 
 .add-btn:active{
