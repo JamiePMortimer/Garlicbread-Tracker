@@ -6,13 +6,31 @@ const mainSelect = document.querySelector('.centre-main');
 const mainSection = mainSelect.querySelectorAll('.main-section');
 const userBtn = document.querySelector('.main-section.users').querySelector('.add-new');
 const snackBtn = document.querySelector('.main-section.snacks').querySelector('.add-new');
+const modalBox = document.querySelector('.add-modal');
+const backdrop = document.querySelector('.backdrop');
 
-userBtn.addEventListener('click', () =>{
-  console.log('User');
-})
+userBtn.addEventListener('click', modalSelect)
+snackBtn.addEventListener('click', modalSelect)
 
-snackBtn.addEventListener('click', () =>{
-  console.log('Snacks');
+function modalSelect (type) {
+  if(type.path[2].classList[1] === 'users'){
+    // console.log('This is Users')
+    modalDisplay()
+  } else if (type.path[2].classList[1] === 'snacks'){
+    console.log('This is Snacks')
+  } else {return}
+}
+
+function modalDisplay (type) {
+modalBox.classList.remove('hide');
+backdrop.classList.remove('hide');
+}
+
+backdrop.addEventListener('click', () =>{
+  backdrop.classList.add('hide');
+  modalBox.classList.add('hide');
+  
+
 })
 
 menuSelect.forEach((e) => {

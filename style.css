@@ -169,6 +169,7 @@ body {
   color: blue;
   right: 5%;
   top: 5%;
+  cursor: pointer;
 }
 
 .add-new:hover {
