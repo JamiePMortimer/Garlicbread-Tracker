@@ -13,7 +13,7 @@ const modalInputText = modalInputBox.querySelectorAll('input');
 const backdrop = document.querySelector('.backdrop');
 
 
-console.log(modalInputText)
+// console.log(modalInputText)
 userBtn.addEventListener('click', modalSelect)
 snackBtn.addEventListener('click', modalSelect)
 
@@ -70,8 +70,3 @@ const userList = new UserList();
 userList.render('users');
 const snackList = new SnackList();
 snackList.render('snacks');
-
-// function store () {
-// document.cookie = 'Note=Boop'
-// }
-

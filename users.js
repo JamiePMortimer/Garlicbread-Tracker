@@ -1,3 +1,4 @@
+
 export class Item {
   constructor(title, age, image) {
     this.title = title;
@@ -12,14 +13,15 @@ export class UserList {
     new Item('Hugo', 8, '/images/Hugo.JPG'),
     new Item('Nate', 10, '/images/Nate.JPG'),
   ];
-  constructor(){};
+  constructor() {}
 
-  render(type){
+  render(type) {
     this.type = type;
     const renderHook = document.getElementById(`${type}`);
     const userList = document.createElement('ul');
     userList.className = 'user-list';
     for (const user of this.users) {
+      chartLabels.push(user.title);
       const userEl = document.createElement('li');
       userEl.className = 'user-item';
       userEl.innerHTML = `
@@ -36,3 +38,7 @@ export class UserList {
     renderHook.append(userList);
   }
 }
+
+
+
+
