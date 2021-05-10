@@ -1,4 +1,4 @@
-const express = requre('express');
+const express = require('express');
 const _ = require('lodash');
 const mongoose = require('mongoose');
 
@@ -6,11 +6,32 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-import {UserList} from './users.js'
-import {SnackList} from './snacks.js'
+mongoose.connect(
+  'mongodb+srv://admin-jamie:Test123@cluster0.vzkqh.mongodb.net/garlicBreadDB',
+  {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  }
+);
+
+const snackSchema = {
+  name: String,
+  description: String,
+  imageURL: String
+}
+
+const userSchema = {
+  name: String,
+  age: Number,
+  date: Date,
+  snacks: [snackSchema]
+}
+
+// import {UserList} from './users.js'
+// import {SnackList} from './snacks.js'
 
 const menuSelect = document.querySelectorAll('.nav-box');
 const mainSelect = document.querySelector('.centre-main');
