@@ -1,3 +1,14 @@
+const express = requre('express');
+const _ = require('lodash');
+const mongoose = require('mongoose');
+
+const app = express();
+
+app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
 import {UserList} from './users.js'
 import {SnackList} from './snacks.js'
 
