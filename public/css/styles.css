@@ -102,3 +102,13 @@ footer{
 .foot-nav i{
   font-size: 3rem;
 }
+
+
+i:hover{
+ color: hotpink;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}

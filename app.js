@@ -73,6 +73,11 @@ app
     }
   });
 
+app.route('/users')
+  .get(function(req,res){
+    res.send("USers Screen")
+  })
+
 // import {UserList} from './users.js'
 // import {SnackList} from './snacks.js'
 
