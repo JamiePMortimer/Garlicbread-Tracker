@@ -7,9 +7,7 @@
 
 body {
   background: #ecf0f3;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+
 }
 
 .head-logo{
@@ -127,4 +125,8 @@ i:hover{
 a{
   text-decoration: none;
   color: inherit;
+}
+
+.active-icon{
+  color: #ccc
 }

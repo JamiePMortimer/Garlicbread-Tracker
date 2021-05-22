@@ -1,36 +1,34 @@
 <%- include("partials/header") -%>
 <div class="container">
-  <form action="/add" method="post" class="snack-form">
+  <div class="head-logo">
+    Snacker Tracker
+  </div>
+  <form action="/users" method="post" class="snack-form">
     <label for="users">Choose a user:</label>
-    <select name="users">
+    <select name="users" type="submit" onchange=submit()>
       <option value="">-Please select a user</option>
+
+      <%if( theId.length > 0){%>
+        <% users.forEach(function(user){ %>
+         <% if (user._id == theId){ %>
+          <option value="<%= user._id %>" selected label="<%=user.name %>">
+            <%= user.name %>
+          </option>  
+        <%} else{%>          
+          <option value="<%= user._id %>" label="<%=user.name %>">
+            <%= user.name %>
+          </option>        
+      <%}})} else {%>
       <% users.forEach(function(user){ %>
       <option value="<%= user._id %>" label="<%=user.name %>">
         <%= user.name %>
       </option>
-
-      <% }) %>
-    </select>
-    <label for="snacks">Choose a snack:</label>
-
-    <select name="snacks">
-      <div class="snack-opt">
-      <option value="">-Please select a snack</option>
-    </div>
-      <% snacks.forEach(function(snack){ %>
-      <option value="<%= snack._id %>" label="<%=snack.name %>">
-        <%= snack.name %>
-      </option>
-      <% }) %>
-    </select>
-    <label for="number">How many:</label>
-    <input type="text" name="number" id="snackNumber" autocomplete="off"/>
-
-    <button type="submit">Add</button>
-  </form>
+    
+    <%})}%>
+      </form>
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
-    <a href="/users"><i class="fas fa-user"></i></a>
+    <i class="fas fa-user active-icon"></i>
     <a href="#"><i class="fas fa-utensils"></i></a>
     <a href="/add"><i class="fas fa-mortar-pestle"></i></a>
   </div>
