@@ -130,3 +130,7 @@ a{
 .active-icon{
   color: #ccc
 }
+
+.user-data{
+  padding-top:1rem;
+}

@@ -31,6 +31,7 @@ const userSchema = {
 
 const eatSchema = {
   name: String,
+  userId: String,
   snack: String,
   number: Number,
   date: Date,
@@ -64,8 +65,10 @@ app
     } else {
       Snack.findById(req.body.snacks, function(err, snack){
       User.findById(req.body.users, function(err,user){
+        console.log(user);
         const newEat = new Eat(
 {          name: user.name,
+          userId: user._id,
           snack: snack.name,
           number: req.body.number,
           date: new Date(),}
@@ -80,17 +83,13 @@ app
 app.route('/users')
   .get(function(req,res){
     User.find(function(err,users){
-      res.render('users',{users:users, theId:''} );
+      res.render('users',{users:users, theId:'', last:''} );
 
     })
   })
   .post(function(req,res){
       res.redirect('/users/'+req.body.users)
  
-    // Passed the value into USers
-    // Now need to pull (default) out and check if it exists
-    // If it exists, check the forEach loop for that entry and make it the default
-    // if a value passed in, use this as the default selection
     // render the data for that user
     // Fave snack
     // Last snack
@@ -100,10 +99,11 @@ app.route('/users')
   })
 
   app.get("/users/:userId", function(req,res){
-    User.find(function(err,users){
-      console.log("params.userId: "+req.params.userId);
-      console.log("users: "+users[0]._id);
-      res.render('users',{theId:req.params.userId,users:users });
+    User.find(function(err,user){
+      Eat.find({userId: req.params.userId},'snack number', {limit: 5,sort:{date: 1}},function(err, eats) {
+        console.log(eats);
+        res.render('users',{theId:req.params.userId,users:user, lastSnack: eats[0].snack, lastSnackNum: eats[0].number});
+      })
     })
   })
 

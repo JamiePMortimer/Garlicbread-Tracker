@@ -3,6 +3,7 @@
   <div class="head-logo">
     Snacker Tracker
   </div>
+  <div class="form-contain">
   <form action="/users" method="post" class="snack-form">
     <label for="users">Choose a user:</label>
     <select name="users" type="submit" onchange=submit()>
@@ -25,7 +26,12 @@
       </option>
     
     <%})}%>
+    </select>
       </form>
+    </div>
+    <div class="user-data">
+      <p>Last snack: <%= lastSnackNum%> <%=lastSnack%></p>
+    </div>
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
     <i class="fas fa-user active-icon"></i>
