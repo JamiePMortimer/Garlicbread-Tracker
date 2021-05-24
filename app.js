@@ -83,7 +83,7 @@ app
 app.route('/users')
   .get(function(req,res){
     User.find(function(err,users){
-      res.render('users',{users:users, theId:'', last:''} );
+      res.render('users',{users:users, theId:'', lastSnack:'', lastSnackNum:''} );
 
     })
   })
@@ -100,9 +100,14 @@ app.route('/users')
 
   app.get("/users/:userId", function(req,res){
     User.find(function(err,user){
-      Eat.find({userId: req.params.userId},'snack number', {limit: 5,sort:{date: 1}},function(err, eats) {
-        console.log(eats);
-        res.render('users',{theId:req.params.userId,users:user, lastSnack: eats[0].snack, lastSnackNum: eats[0].number});
+      Eat.find({userId: req.params.userId},'snack number', {limit: 5,sort:{date: -1}},function(err, eats) {
+        Eat.aggregate([
+          {$match: {userId: req.params.userId}},
+          {$group: {_id: "$snack", total:{$sum: "$number"}}}
+          ],function (err,snacks){
+            console.log(snacks);
+            res.render('users',{theId:req.params.userId,users:user, lastSnack: eats[0].snack, lastSnackNum: eats[0].number, topSnacks: snacks})
+          })
       })
     })
   })
