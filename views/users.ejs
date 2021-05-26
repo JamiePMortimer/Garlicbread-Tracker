@@ -31,6 +31,12 @@
     </div>
     <div class="user-data">
       <p>Last snack: <%= lastSnackNum%> <%=lastSnack%></p>
+      <br>
+      <p>Favourite snacks:</p>
+
+      <% topSnacks.forEach(function(snack) { %>
+      <p><%= snack._id %>: <%= snack.total %></p>
+      <% }) %>
     </div>
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
