@@ -94,6 +94,13 @@ app.route('/users')
 
   })
 
+  app.route('/snacks')
+  .get(function(req,res){
+    Snack.find(function(err,snacks){
+      res.render('snack',{snacks:snacks})
+    })
+  })
+
   app.get("/users/:userId", function(req,res){
     User.find(function(err,user){
       Eat.find({userId: req.params.userId},'snack number', {limit: 2,sort:{date: -1}},function(err, eats) {
