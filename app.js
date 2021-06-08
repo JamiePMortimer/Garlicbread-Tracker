@@ -33,6 +33,7 @@ const eatSchema = {
   name: String,
   userId: String,
   snack: String,
+  snackId: String,
   number: Number,
   date: Date,
 };
@@ -70,6 +71,7 @@ app
 {          name: user.name,
           userId: user._id,
           snack: snack.name,
+          snackId: snack._id,
           number: req.body.number,
           date: new Date(),}
         );
@@ -100,6 +102,9 @@ app.route('/users')
       res.render('snack',{snacks:snacks})
     })
   })
+  .post(function(req,res){
+    res.redirect('snacks/'+req.body.snacks)
+  })
 
   app.get("/users/:userId", function(req,res){
     User.find(function(err,user){
@@ -116,6 +121,11 @@ app.route('/users')
       })
     })
   })
+
+app.get("/snacks/:snack", function(req,res){
+  Eat.find({snackId: req.params.snack})
+  res.send("Working the snack " + req.params.snack)
+})
 
 app.listen(3000, function () {
   console.log('Server has started, yo!');

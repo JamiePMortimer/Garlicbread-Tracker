@@ -31,13 +31,18 @@
       </form>
     </div>
     <div class="user-data">
-      <p>Last snack: <%= lastSnackNum%> <%=lastSnack%></p>
+     <% if (lastSnack) { %>
+      <p>Last snack: <%= lastSnackNum%> <%=lastSnack%></p>        
       <br>
       <p>Favourite snacks:</p>
 
       <% topSnacks.forEach(function(snack) { %>
       <p><%= snack._id %>: <%= snack.total %></p>
       <% }) %>
+     <% } else { %>
+      <% } %>
+
+
     </div>
     <div class="user-add">
       <i class="fas fa-plus-square"></i>
