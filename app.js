@@ -66,7 +66,6 @@ app
     } else {
       Snack.findById(req.body.snacks, function(err, snack){
       User.findById(req.body.users, function(err,user){
-        console.log(user);
         const newEat = new Eat(
 {          name: user.name,
           userId: user._id,
@@ -93,8 +92,12 @@ app.route('/users')
  
     // Chart of snacks
     // Select a specific snack and see the volume
+  });
 
-  })
+  app.route('/user-add')
+  .get(function(req,res){
+    res.render('user-add')
+  });
 
   app.route('/snacks')
   .get(function(req,res){
@@ -115,7 +118,6 @@ app.route('/users')
         },
         }, {$sort: {total: -1}},{$limit: 3}]
         ,function (err,snacks){
-            console.log(snacks);
             res.render('users',{theId:req.params.userId,users:user, lastSnack: eats[0].snack, lastSnackNum: eats[0].number, topSnacks: snacks})
           })
       })

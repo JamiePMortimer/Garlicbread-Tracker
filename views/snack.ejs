@@ -4,25 +4,35 @@
     <h1>Snacker Tracker</h1>
   </div>
   <div class="form-contain">
-  <form action="/snacks" method="post" class="snack-form">
+    <form action="/add" method="post" class="snack-form">
+      <label for="users">Choose a user:</label>
+      <select name="users">
+        <option value="">-Please select a user</option>
+        <% users.forEach(function(user){ %>
+        <option value="<%= user._id %>" label="<%=user.name %>">
+          <%= user.name %>
+        </option>
+        <% }) %>
+      </select>
+      <label for="snacks">Choose a snack:</label>
 
-    <label for="snacks">Choose a snack:</label>
-
-    <select name="snacks" type="submit" onchange=submit()>
-      <div class="snack-opt">
-      <option value="">-Please select a snack</option>
-    </div>
-      <% snacks.forEach(function(snack){ %>
-      <option value="<%= snack._id %>" label="<%=snack.name %>">
-        <%= snack.name %>
-      </option>
-      <% }) %>
-    </select>
-  </form>
-</div>
-  <div class="snack-add">
-    <i class="fas fa-plus-square"></i>
+      <select name="snacks">
+        <div class="snack-opt">
+          <option value="">-Please select a snack</option>
+        </div>
+        <% snacks.forEach(function(snack){ %>
+        <option value="<%= snack._id %>" label="<%=snack.name %>">
+          <%= snack.name %>
+        </option>
+        <% }) %>
+      </select>
+      <label for="number">How many:</label>
+      <input type="text" name="number" id="snackNumber" autocomplete="off"/>
+  
+      <button type="submit">Add</button>
+    </form>
   </div>
+
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
     <a href="/users"><i class="fas fa-user"></i></a>

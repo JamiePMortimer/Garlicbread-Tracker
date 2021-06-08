@@ -50,7 +50,8 @@ input, select{
   font-size: 14px;
   border-radius: 50px;
   border-color: transparent;
-
+  width: 70%;
+  align-self: center;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
@@ -62,14 +63,16 @@ option{
 }
 
 label{
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 
 button{
-  margin-top: 20px;
+  align-self: center;
+  margin-top: 10px;
   background: hotpink;
   height: 40px;
+  width: 50%;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 600;
@@ -141,7 +144,6 @@ a{
   padding: 1rem;
   bottom: 10vh;
   left: 0;
-  background: hotpink;
   width: 100%;
 }
 
