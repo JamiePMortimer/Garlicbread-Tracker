@@ -45,7 +45,7 @@ const Eat = mongoose.model('Eat', eatSchema);
 
 app
   .get('/', function (req, res) {
-    res.send('Hello');
+    res.render('home');
   })
 
   app.route('/add')
