@@ -1,20 +1,27 @@
 <%- include("partials/header") -%>
 <div class="container">
   <div class="head-logo">
-    <h1> Snacker Tracker</h1>
+    <h1>Snacker Tracker</h1>
   </div>
   <div class="form-contain">
-    <form action="/user-add" method="post" class="snack-form">
-    <input type="text" name="" id="">
-    <input type="text" name="" id="">
+    <form action="/user-add" method="post" class="user-form">
+      <div class="name-contain">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="userName" autocomplete="off" />
+      </div>
+      <div class="name-contain">
+        <label for="age">Age:</label>
+        <input type="text" name="age" id="userAge" autocomplete="off" />
+      </div>
+      <button type="submit" class="user-submit-btn">Add</button>
     </form>
   </div>
   <div class="user-add">
     <i class="fas fa-plus-square active-icon"></i>
-    </div>
+  </div>
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
-    <a href="/users"><i class="fas fa-user" ></i></a>
+    <a href="/users"><i class="fas fa-user"></i></a>
     <a href="#"><i class="fas fa-utensils"></i></a>
     <a href="/add"><i class="fas fa-mortar-pestle"></i></a>
   </div>

@@ -97,7 +97,15 @@ app.route('/users')
   app.route('/user-add')
   .get(function(req,res){
     res.render('user-add')
-  });
+  })
+  .post(function(req,res){
+    const newUser = new User({
+      name: req.body.name,
+      age: req.body.age
+    });
+    newUser.save();
+    res.redirect('/user-add')
+  })
 
   app.route('/snacks')
   .get(function(req,res){
@@ -112,6 +120,9 @@ app.route('/users')
   app.get("/users/:userId", function(req,res){
     User.find(function(err,user){
       Eat.find({userId: req.params.userId},'snack number', {limit: 2,sort:{date: -1}},function(err, eats) {
+        if(eats.length === 0){
+          res.render('users',{theId:req.params.userId,users:user, lastSnack: "", lastSnackNum: "", topSnacks: ""})
+        } else {
         Eat.aggregate([
           {$match: {userId: req.params.userId}},
           {$group: {_id: "$snack", total:{$sum: "$number"}
@@ -119,7 +130,7 @@ app.route('/users')
         }, {$sort: {total: -1}},{$limit: 3}]
         ,function (err,snacks){
             res.render('users',{theId:req.params.userId,users:user, lastSnack: eats[0].snack, lastSnackNum: eats[0].number, topSnacks: snacks})
-          })
+          })}
       })
     })
   })

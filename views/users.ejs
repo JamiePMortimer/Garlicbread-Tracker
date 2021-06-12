@@ -10,7 +10,7 @@
     <select name="users" type="submit" onchange=submit()>
       <option value="">-Please select a user</option>
 
-      <%if( theId.length > 0){%>
+      <%if( theId.length > 0 || theId ){%>
         <% users.forEach(function(user){ %>
          <% if (user._id == theId){ %>
           <option value="<%= user._id %>" selected label="<%=user.name %>">

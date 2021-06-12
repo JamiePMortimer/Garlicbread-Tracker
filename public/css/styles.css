@@ -9,7 +9,7 @@ body {
   background: #ecf0f3;
 }
 
-.head-logo{
+.head-logo {
   color: hotpink;
   padding: 1rem;
   display: flex;
@@ -17,22 +17,22 @@ body {
   width: 100%;
   background: grey;
 }
-.head-logo h1{
+.head-logo h1 {
   font-size: 3.5rem;
   font-family: 'Graduate', cursive;
 }
 
-.snack-opt{
+.snack-opt {
   width: 80%;
 }
 
-.container{
+.container {
   position: relative;
   margin-top: 2vh;
   margin-left: auto;
   margin-right: auto;
   width: 350px;
-  height:90%;
+  height: 90%;
   border-radius: 20px;
   box-sizing: border-box;
   background: #ecf0f3;
@@ -42,7 +42,8 @@ body {
   overflow: hidden;
 }
 
-input, select{
+input,
+select {
   background: #ecf0f3;
   padding: 20px;
   padding-left: 20px;
@@ -55,19 +56,19 @@ input, select{
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
-select{
+select {
   padding: 5px;
 }
-option{
+option {
   padding-left: 10px;
 }
 
-label{
+label {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-button{
+button {
   align-self: center;
   margin-top: 10px;
   background: hotpink;
@@ -80,26 +81,37 @@ button{
   border-color: transparent;
   box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
   font-size: 1.4rem;
-
 }
 
-button:hover{
+button:hover {
   box-shadow: none;
 }
 
-.snack-form{
+.snack-form .user-form {
   display: flex;
   flex-direction: column;
 }
 
-footer{
+.user-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.name-contain{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+footer {
   margin-top: auto;
   display: flex;
   align-items: baseline;
   justify-content: center;
 }
 
-.foot-nav{
+.foot-nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -112,32 +124,32 @@ footer{
   background: grey;
 }
 
-.foot-nav i{
+.foot-nav i {
   font-size: 2rem;
 }
 
-
-i:hover{
- color: #ccc;
+i:hover {
+  color: #ccc;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-.active-icon{
-  color: hotpink
+.active-icon {
+  color: hotpink;
 }
-.active-icon:hover{
+.active-icon:hover {
   color: hotpink;
 }
 
-.user-data{
-  padding-top:1rem;
+.user-data {
+  padding-top: 1rem;
 }
 
-.user-add, .snack-add{
+.user-add,
+.snack-add {
   position: absolute;
   display: flex;
   flex-direction: row-reverse;
@@ -147,6 +159,10 @@ a{
   width: 100%;
 }
 
-.user-add i{
+.user-add i {
   font-size: 1.2rem;
+}
+
+.user-submit-btn{
+  margin-top: 15%;
 }
