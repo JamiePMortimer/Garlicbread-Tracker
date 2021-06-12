@@ -110,7 +110,7 @@ app.route('/users')
   app.route('/snacks')
   .get(function(req,res){
     Snack.find(function(err,snacks){
-      res.render('snack',{snacks:snacks, theId:'', lastSnack:'', lastSnackNum:'', topSnacks:[]})
+      res.render('snack',{snacks:snacks, theId:'', lastUser:'', lastUserNum:'', topUser:[]})
     })
   })
   .post(function(req,res){
@@ -120,6 +120,7 @@ app.route('/users')
   app.get("/users/:userId", function(req,res){
     User.find(function(err,user){
       Eat.find({userId: req.params.userId},'snack number', {limit: 2,sort:{date: -1}},function(err, eats) {
+        console.log(eats);
         if(eats.length === 0){
           res.render('users',{theId:req.params.userId,users:user, lastSnack: "", lastSnackNum: "", topSnacks: ""})
         } else {
@@ -135,9 +136,25 @@ app.route('/users')
     })
   })
 
-app.get("/snacks/:snack", function(req,res){
-  Eat.find({snackId: req.params.snack})
-  res.send("Working the snack " + req.params.snack)
+app.get("/snacks/:snackId", function(req,res){
+  Snack.find(function(err,snack){
+    console.log(snack)
+    Eat.find({snackId: req.params.snackId},'snack number name date', {limit: 1,sort:{date: -1}},function(err, eats) {
+      console.log(eats);
+      if(eats.length === 0){
+        res.render('snack',{theId:req.params.snackId,snacks:snack, lastUser: "", lastUserNum: "", topUser: ""})
+      } else {
+      Eat.aggregate([
+        {$match: {snackId: req.params.snackId}},
+        {$group: {_id: "$name", total:{$sum: "$number"}
+      },
+      }, {$sort: {total: -1}},{$limit: 3}]
+      ,function (err,users){
+        console.log(users)
+          res.render('snack',{theId:req.params.snackId,snacks:snack, lastUser: eats[0].name, lastUserNum: eats[0].number, topUsers: users})
+        })}
+    })
+  })
 })
 
 app.listen(3000, function () {

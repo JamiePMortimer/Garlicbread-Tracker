@@ -30,7 +30,21 @@
       </select>
         </form>
   </div>
+  <div class="snack-data">
+    <br>
+    <% if (lastUser) { %>
+     <p>Last snacker: <%= lastUser%> (<%= lastUserNum %>)</p>        
+     <br>
+     <p>Greedy Snackers:</p>
 
+     <% topUsers.forEach(function(snack) { %>
+     <p><%= snack._id %>: <%= snack.total %></p>
+     <% }) %>
+    <% } else { %>
+     <% } %>
+
+
+   </div>
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
     <a href="/users"><i class="fas fa-user"></i></a>
