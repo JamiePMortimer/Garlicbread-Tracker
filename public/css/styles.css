@@ -87,7 +87,12 @@ button:hover {
   box-shadow: none;
 }
 
-.snack-form .user-form {
+.snack-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-form {
   display: flex;
   flex-direction: column;
 }

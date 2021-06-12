@@ -53,7 +53,7 @@ app
 
   User.find(function(err,foundUsers){
   Snack.find(function(err,foundSnacks){
-    res.render('snack', {
+    res.render('add-snack', {
       users: foundUsers,
       snacks: foundSnacks
     })
@@ -110,7 +110,7 @@ app.route('/users')
   app.route('/snacks')
   .get(function(req,res){
     Snack.find(function(err,snacks){
-      res.render('snack',{snacks:snacks})
+      res.render('snack',{snacks:snacks, theId:'', lastSnack:'', lastSnackNum:'', topSnacks:[]})
     })
   })
   .post(function(req,res){
