@@ -1,7 +1,7 @@
 <%- include("partials/header") -%>
 <div class="container">
   <div class="head-logo">
-    <h1> Snacker Tracker</h1>
+    <a href="/"><h1>Snacker Tracker</h1></a>
   </div>
   <div class="form-contain">
   <form action="/users" method="post" class="snack-form">
@@ -32,7 +32,7 @@
     </div>
     <div class="user-data">
      <% if (lastSnack) { %>
-      <p>Last snack: <%= lastSnackNum%> <%=lastSnack%></p>        
+      <p>Last snack: <%= lastSnackNum%> <%=lastSnack%> on <%=snackTime%></p>        
       <br>
       <p>Favourite snacks:</p>
 
@@ -50,7 +50,7 @@
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
     <i class="fas fa-user active-icon"></i>
-    <a href="#"><i class="fas fa-utensils"></i></a>
+    <a href="/snacks"><i class="fas fa-utensils"></i></a>
     <a href="/add"><i class="fas fa-mortar-pestle"></i></a>
   </div>
 </div>

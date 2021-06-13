@@ -1,42 +1,32 @@
 <%- include("partials/header") -%>
 <div class="container">
   <div class="head-logo">
-    <h1>Snacker Tracker - add-snack</h1>
+    <a href="/"><h1>Snacker Tracker</h1></a>
   </div>
   <div class="form-contain">
-    <form action="/add" method="post" class="snack-form">
-      <label for="users">Choose a user:</label>
-      <select name="users">
-        <option value="">-Please select a user</option>
-        <% users.forEach(function(user){ %>
-        <option value="<%= user._id %>" label="<%=user.name %>">
-          <%= user.name %>
-        </option>
-        <% }) %>
-      </select>
-      <label for="snacks">Choose a snack:</label>
-
-      <select name="snacks">
-        <div class="snack-opt">
-          <option value="">-Please select a snack</option>
-        </div>
-        <% snacks.forEach(function(snack){ %>
-        <option value="<%= snack._id %>" label="<%=snack.name %>">
-          <%= snack.name %>
-        </option>
-        <% }) %>
-      </select>
-      <label for="number">How many:</label>
-      <input type="text" name="number" id="snackNumber" autocomplete="off"/>
-  
-      <button type="submit">Add</button>
+    <form action="/snack-add" method="post" class="user-form">
+      <div class="name-contain">
+        <label for="name">Snack name:</label>
+        <input type="text" name="name" id="snackName" autocomplete="off" />
+      </div>
+      <div class="name-contain">
+        <label for="age">Description:</label>
+        <input type="text" name="desc" id="snackDesc" autocomplete="off" />
+      </div>
+      <div class="name-contain">
+        <label for="age">Image URL:</label>
+        <input type="text" name="url" id="snackURL" autocomplete="off" />
+      </div>
+      <button type="submit" class="user-submit-btn">Add</button>
     </form>
   </div>
-
+  <div class="user-add">
+    <i class="fas fa-plus-square active-icon"></i>
+  </div>
   <div class="foot-nav">
     <a href="#"><i class="fas fa-chart-line"></i></a>
     <a href="/users"><i class="fas fa-user"></i></a>
-    <a href="#"><i class="fas fa-utensils"></i></a>
+    <a href="/snacks"><i class="fas fa-utensils"></i></a>
     <i class="fas fa-mortar-pestle active-icon"></i>
   </div>
 </div>
