@@ -134,8 +134,18 @@ app
     res.redirect('/user-add');
   });
 
-app.route('/snack-add').get(function (req, res) {
+app.route('/snack-add')
+.get(function (req, res) {
   res.render('add-snack');
+})
+.post(function(req,res){
+  const newSnack = new Snack({
+    name: req.body.name,
+    description: req.body.desc,
+    imageURL: req.body.url,
+  })
+  newSnack.save();
+  res.redirect('/snack-add');
 });
 
 app

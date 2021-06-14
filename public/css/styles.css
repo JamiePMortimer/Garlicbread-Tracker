@@ -81,6 +81,7 @@ button {
   border-color: transparent;
   box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
   font-size: 1.4rem;
+  z-index: 10;
 }
 
 button:hover {
