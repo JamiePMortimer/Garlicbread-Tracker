@@ -1,0 +1,43 @@
+<%- include("partials/header") -%>
+<div class="container">
+  <div class="head-logo">
+   <a href="/"><h1>Snacker Tracker</h1></a>
+  </div>
+  <div class="form-contain">
+    <form action="/snacks" method="post" class="snack-form">
+    
+      <label for="users">Choose a snack:</label>
+      <select name="snacks" type="submit" onchange=submit()>
+        <option value="">-Please select a snack</option>
+  
+        <%if( theId.length > 0 || theId ){%>
+          <% snacks.forEach(function(snack){ %>
+           <% if (snack._id == theId){ %>
+            <option value="<%= snack._id %>" selected label="<%=snack.name %>">
+              <%= snack.name %>
+            </option>  
+          <%} else{%>          
+            <option value="<%= snack._id %>" label="<%=snack.name %>">
+              <%= snack.name %>
+            </option>        
+        <%}})} else {%>
+        <% snacks.forEach(function(snack){ %>
+        <option value="<%= snack._id %>" label="<%=snack.name %>">
+          <%= snack.name %>
+        </option>
+      
+      <%})}%>
+      </select>
+        </form>
+  </div>
+
+   </div>
+ 
+  <div class="foot-nav">
+    <a href="#"><i class="fas fa-chart-line"></i></a>
+    <a href="/users"><i class="fas fa-user"></i></a>
+    <i class="fas fa-utensils active-icon"></i>
+    <a href="/add"><i class="fas fa-mortar-pestle"></i></a>
+  </div>
+</div>
+<%- include("partials/footer") -%>

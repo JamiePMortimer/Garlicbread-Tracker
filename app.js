@@ -71,7 +71,7 @@ app
   .get(function (req, res) {
     User.find(function (err, foundUsers) {
       Snack.find(function (err, foundSnacks) {
-        res.render('add-snack', {
+        res.render('add-eats', {
           users: foundUsers,
           snacks: foundSnacks,
         });
@@ -98,6 +98,18 @@ app
       res.redirect('/add');
     }
   });
+
+app.route('/dash')
+.get(function (req, res) {
+  User.find(function (err, foundUsers) {
+    Snack.find(function (err, foundSnacks) {
+      res.render('chart', {
+        users: foundUsers,
+        snacks: foundSnacks,
+      });
+    });
+  });
+})
 
 app
   .route('/users')
