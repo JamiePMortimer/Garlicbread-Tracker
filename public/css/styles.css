@@ -59,7 +59,7 @@ select {
 select {
   padding: 5px;
 }
-option {
+option span{
   padding-left: 10px;
 }
 
@@ -171,4 +171,11 @@ a {
 
 .user-submit-btn{
   margin-top: 15%;
+}
+.chart-selections{
+  display: flex;
+  flex-direction: row;
+}
+.chart-area{
+  height: 275px;
 }
