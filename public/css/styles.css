@@ -178,4 +178,7 @@ a {
 }
 .chart-area{
   height: 275px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

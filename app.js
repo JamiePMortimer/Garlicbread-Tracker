@@ -106,9 +106,13 @@ app.route('/dash')
       res.render('chart', {
         users: foundUsers,
         snacks: foundSnacks,
+        data: [10, 9, 8, 7, 6, 5, 25]
       });
     });
   });
+})
+.post(function (req,res){
+  res.send('Here');
 })
 
 app
