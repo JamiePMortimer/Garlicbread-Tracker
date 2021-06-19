@@ -27,10 +27,11 @@
   </form>
   <div class="chart-area">
     <canvas id="myChart"></canvas>
+  
     <script>
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
-          type: 'bar',
+          type: 'pie',
           data: {
               labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
               datasets: [{
@@ -51,6 +52,7 @@
                       'rgba(54, 162, 235, 1)',
                       'rgba(54, 162, 235, 1)',
                       'rgba(54, 162, 235, 1)',
+                      'rgba(54, 162, 235, 1)',
                       'rgba(54, 162, 235, 1)'
                   ],
                   borderWidth: 1
@@ -67,7 +69,7 @@
     </script>
   </div>
   <div class="foot-nav">
-    <a href="/dash"><i class="fas fa-chart-line"></i></a>
+    <!-- <a href="/dash"><i class="fas fa-chart-line"></i></a> -->
     <a href="/users"><i class="fas fa-user"></i></a>
     <a href="/snacks"><i class="fas fa-utensils"></i></a>
     <i class="fas fa-mortar-pestle active-icon"></i>

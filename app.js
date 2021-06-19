@@ -99,21 +99,28 @@ app
     }
   });
 
-app.route('/dash')
-.get(function (req, res) {
-  User.find(function (err, foundUsers) {
-    Snack.find(function (err, foundSnacks) {
-      res.render('chart', {
-        users: foundUsers,
-        snacks: foundSnacks,
-        data: [10, 9, 8, 7, 6, 5, 25]
-      });
-    });
-  });
-})
-.post(function (req,res){
-  res.send('Here');
-})
+// app.route('/dash')
+// .get(function (req, res) {
+//   User.find(function (err, foundUsers) {
+//     Snack.find(function (err, foundSnacks) {
+//       Eat.aggregate([
+//     {$group: {_id: "$name",number: {$sum: "$number"}},
+//     {$match:{date: {$gte:  new Date() - 86400000} }}
+
+//   ], function(err, data){
+//     console.log(data);
+//       res.render('chart', {
+//         users: foundUsers,
+//         snacks: foundSnacks,
+//         data: data
+//       });
+//   })
+//     })
+// }})
+// })
+// .post(function (req,res){
+//   res.send('Here');
+// })
 
 app
   .route('/users')
